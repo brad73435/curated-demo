@@ -1,0 +1,69 @@
+#!/usr/bin/python3
+import sys
+import requests
+import json
+
+if len(sys.argv) < 2:
+    print("Usage: ")
+    print()
+    print("    webvarcli.py server")
+    print("        lists the webvars and their selected(*) and default(_) items")
+    print()
+    print("    webvarcli.py server webvar value")
+    print("        sets the webvar to the particular value")
+    print()
+    exit(1)
+
+URLCONST = "http://" + sys.argv[1] + "/curated/const"
+
+r = requests.get(url=URLCONST)
+const = r.json()
+
+URLWV = "http://" + sys.argv[1] + "/curated/webvarsets"
+
+s = requests.get(url=URLWV)
+webvar = s.json()
+active = {}
+
+for w in webvar.keys():
+    active[w] = webvar[w].split("x", 2)[2]
+
+
+vs = const['flowvars']['varsets']
+
+if len(sys.argv) == 2:
+
+    for j in vs:
+        for k in vs[j]:
+            if k['type'] == 'web':
+                print(j, k['bname'], end='')
+                if k['default']:
+                    print('_', end='')
+                if active[j] == k['bname']:
+                    print('*')
+                else:
+                    print('')
+elif len(sys.argv) == 3:
+    for k in vs[sys.argv[2]]:
+        if k['type'] == 'web':
+            print(k['bname'], end='')
+            if k['default']:
+                print('_', end='')
+            if active[sys.argv[2]] == k['bname']:
+                print('*')
+            else:
+                print('')
+else:
+    # data to be sent to api
+    data = '{"' + sys.argv[2] + '":"WEBx' + \
+        sys.argv[2] + 'x' + sys.argv[3] + '"}'
+
+    print(data)
+    URLWV = "http://" + sys.argv[1] + "/curated/webvarsets"
+
+    # sending post request and saving response as response object
+    r = requests.post(url=URLWV, data=data)
+
+    # extracting response text
+    # res = r.text
+    # print(res)

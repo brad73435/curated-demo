@@ -1,3 +1,5 @@
 # curated-demo
 Public files for use in Curated demo.
-Test
+
+These files will be updated from the login environment 
+of the demo.
