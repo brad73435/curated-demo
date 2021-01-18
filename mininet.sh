@@ -36,11 +36,15 @@ function mn-alias {
 
 function iperf-pair {
   echo run iperf on $2:$3
-  docker exec $2 iperf -D -s  -p $3
+  docker exec $2 iperf -V -D -s  -p $3
   echo client on $1
   docker exec $1 iperf -c $2 -p $3
 }
 
-#
-
+function iperf-pair6 {
+  echo run iperf on $2:$3
+  docker exec $2 iperf -V -D -s  -p $3
+  echo client on $1
+  docker exec $1 iperf -V -c "$2"-6 -p $3
+}
 
