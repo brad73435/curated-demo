@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+#
+if [ -d curated-demo ];then
+  git -C $HOME/curated-demo pull
+else
+  echo missing curated demo dir
+  echo re-cloning
+  git clone https://github.com/brad73435/curated-demo
+fi
+
+mkdir -p $HOME/bin
+cp $HOME/curated-demo/docker-update $HOME/bin
+cp $HOME/curated-demo/mininet.sh $HOME/bin
+cp $HOME/curated-demo/webvarcli $HOME/bin
+cp $HOME/curated-demo/dot-bashrc $HOME/.bashrc
+
