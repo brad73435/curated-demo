@@ -16,7 +16,7 @@ cp $HOME/curated-demo/mininet.sh $HOME/bin
 cp $HOME/curated-demo/webvarcli $HOME/bin
 cp $HOME/curated-demo/dot-bashrc $HOME/.bashrc
 
-if [ -z `pgrep gns3` ];then
+if [ -z "`pgrep gns3`" ];then
  echo no GNS seen running
  echo updating docker images
  docker pull ghcr.io/tatarsky/gns3/controllerprod:0.1
