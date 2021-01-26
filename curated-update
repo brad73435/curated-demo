@@ -15,3 +15,15 @@ cp $HOME/curated-demo/mininet.sh $HOME/bin
 cp $HOME/curated-demo/webvarcli $HOME/bin
 cp $HOME/curated-demo/dot-bashrc $HOME/.bashrc
 
+if [ -z `pgrep gns3` ];then
+ echo no GNS seen running
+ echo updating docker images
+ docker pull ghcr.io/tatarsky/gns3/controllerprod:0.1
+ docker pull ghcr.io/tatarsky/gns3/openvswitch28:0.1
+ docker pull ghcr.io/tatarsky/gns3/cnhost:0.1
+ docker pull ghcr.io/tatarsky/gns3/router:0.1
+ docker images
+else
+ echo GNS3 appears to be still running
+ echo Please quit it and re-run curated-update
+fi
