@@ -1,8 +1,0 @@
-#!/bin/sh
-
-mkdir -p $HOME/bin
-cp $HOME/curated-demo/docker-update $HOME/bin
-cp $HOME/curated-demo/mininet.sh $HOME/bin
-cp $HOME/curated-demo/webvarcli $HOME/bin
-cp $HOME/curated-demo/dot-bashrc $HOME/.bashrc
-
