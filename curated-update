@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 #
+cd $HOME
 if [ -d curated-demo ];then
   git -C $HOME/curated-demo pull
 else
@@ -10,7 +11,7 @@ else
 fi
 
 mkdir -p $HOME/bin
-cp $HOME/curated-demo/docker-update $HOME/bin
+cp $HOME/curated-demo/curated-update $HOME/bin
 cp $HOME/curated-demo/mininet.sh $HOME/bin
 cp $HOME/curated-demo/webvarcli $HOME/bin
 cp $HOME/curated-demo/dot-bashrc $HOME/.bashrc
