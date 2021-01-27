@@ -6,10 +6,10 @@ import json
 if len(sys.argv) < 2:
     print("Usage: ")
     print()
-    print("    webvarcli.py server")
+    print("    webvarcli server")
     print("        lists the webvars and their selected(*) and default(_) items")
     print()
-    print("    webvarcli.py server webvar value")
+    print("    webvarcli server webvar value")
     print("        sets the webvar to the particular value")
     print()
     exit(1)
