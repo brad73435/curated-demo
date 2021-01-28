@@ -3,6 +3,8 @@
 #
 if [ -f /swapfile ];then
    # it has swap
+   echo has swap
+   cat /proc/swaps
 else
    echo we would like to add a swapfile
    echo you will be asked to type the curated password
