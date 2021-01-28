@@ -9,7 +9,9 @@ else
    echo we would like to add a swapfile
    echo you will be asked to type the curated password
    echo
-   sudo mkswap /swapfile 2097152
+   sudo fallocate -l 1G /swapfile
+   sudo chmod 600 /swapfile
+   sudo mkswap /swapfile
    sudo swapon /swapfile
 fi
 
