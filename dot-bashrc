@@ -105,7 +105,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-if [ -f ~/mininet.sh ]; then
+if [ -f ~/bin/mininet.sh ]; then
     . ~/bin/mininet.sh
 fi
 
