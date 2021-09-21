@@ -25,7 +25,6 @@ else
 fi
 
 mkdir -p $HOME/bin
-cp $HOME/curated-demo/curated-update $HOME/bin
 cp $HOME/curated-demo/docker-update $HOME/bin
 cp $HOME/curated-demo/mininet.sh $HOME/bin
 cp $HOME/curated-demo/webvarcli $HOME/bin
@@ -44,3 +43,9 @@ else
  echo GNS3 appears to be still running
  echo Please quit it and re-run curated-update
 fi
+
+# Update this script last to prevent script read bugs
+
+cp $HOME/curated-demo/curated-update $HOME/bin
+
+
