@@ -1,6 +1,7 @@
 #!/bin/sh
 docker images
 docker pull ghcr.io/tatarsky/gns3/controllerprod:0.1
+docker pull ghcr.io/tatarsky/gns3/controllerqos:0.1
 docker pull ghcr.io/tatarsky/gns3/openvswitch28:0.1
 docker pull ghcr.io/tatarsky/gns3/cnhost:0.1
 docker pull ghcr.io/tatarsky/gns3/router:0.1
