@@ -26,6 +26,7 @@ fi
 
 mkdir -p $HOME/bin
 cp $HOME/curated-demo/curated-update $HOME/bin
+cp $HOME/curated-demo/docker-update $HOME/bin
 cp $HOME/curated-demo/mininet.sh $HOME/bin
 cp $HOME/curated-demo/webvarcli $HOME/bin
 cp $HOME/curated-demo/dot-bashrc $HOME/.bashrc
@@ -34,6 +35,7 @@ if [ -z "`pgrep gns3`" ];then
  echo no GNS seen running
  echo updating docker images
  docker pull ghcr.io/tatarsky/gns3/controllerprod:0.1
+ docker pull ghcr.io/tatarsky/gns3/controllerqos:0.1
  docker pull ghcr.io/tatarsky/gns3/openvswitch28:0.1
  docker pull ghcr.io/tatarsky/gns3/cnhost:0.1
  docker pull ghcr.io/tatarsky/gns3/router:0.1
