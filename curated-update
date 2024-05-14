@@ -1,6 +1,9 @@
 #!/bin/sh
 #
 #
+#
+VER=0.2
+#
 if [ -f /swapfile ];then
    # it has swap
    echo has swap
@@ -33,11 +36,11 @@ cp $HOME/curated-demo/dot-bashrc $HOME/.bashrc
 if [ -z "`pgrep gns3`" ];then
  echo no GNS seen running
  echo updating docker images
- docker pull ghcr.io/tatarsky/gns3/controllerprod:0.1
- docker pull ghcr.io/tatarsky/gns3/controllerqos:0.1
- docker pull ghcr.io/tatarsky/gns3/openvswitch28:0.1
- docker pull ghcr.io/tatarsky/gns3/cnhost:0.1
- docker pull ghcr.io/tatarsky/gns3/router:0.1
+ docker pull ghcr.io/tatarsky/gns3/controllerprod:$VER
+ docker pull ghcr.io/tatarsky/gns3/controllerqos:$VER
+ docker pull ghcr.io/tatarsky/gns3/openvswitch28:$VER
+ docker pull ghcr.io/tatarsky/gns3/cnhost:$VER
+ docker pull ghcr.io/tatarsky/gns3/router:$VER
  docker images
 else
  echo GNS3 appears to be still running
