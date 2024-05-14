@@ -1,6 +1,6 @@
 
 function mn-rename {
-   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/cnhost:0.1" -q ` 
+   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/cnhost:0.2" -q ` 
      do 
      docker rename $e `docker exec $e hostname` 
     done
@@ -8,20 +8,20 @@ function mn-rename {
      do 
      docker rename $e `docker exec $e hostname` 
     done
-   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/openvswitch28:0.1" -q ` 
+   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/openvswitch28:0.2" -q ` 
      do 
      docker rename $e `docker exec $e hostname` 
     done
-   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/controller:0.1" -q ` 
+   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/controller:0.2" -q ` 
      do 
      docker rename $e `docker exec $e hostname` 
     done
    # Probably should warn if somehow both are running
-   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/controllerprod:0.1" -q ` 
+   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/controllerprod:0.2" -q ` 
      do 
      docker rename $e `docker exec $e hostname` 
     done
-   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/router:0.1" -q ` 
+   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/router:0.2" -q ` 
      do 
      docker rename $e `docker exec $e hostname` 
     done
