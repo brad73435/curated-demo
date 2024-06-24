@@ -8,11 +8,11 @@ function mn-rename {
      do 
      docker rename $e `docker exec $e hostname` 
     done
-   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/openvswitch28:0.2" -q ` 
+   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/openvswitch28qos:0.2" -q ` 
      do 
      docker rename $e `docker exec $e hostname` 
     done
-   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/controller:0.2" -q ` 
+   for e in `docker ps --filter "ancestor=ghcr.io/tatarsky/gns3/controllerqos:0.2" -q ` 
      do 
      docker rename $e `docker exec $e hostname` 
     done
