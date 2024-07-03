@@ -4,19 +4,20 @@
 #
 VER=0.2
 #
-if [ -f /swapfile ];then
-   # it has swap
-   echo has swap
-   cat /proc/swaps
-else
-   echo we would like to add a swapfile
-   echo you will be asked to type the curated password
-   echo
-   sudo fallocate -l 2G /swapfile
-   sudo chmod 600 /swapfile
-   sudo mkswap /swapfile
-   sudo swapon /swapfile
-fi
+# Disable for now this was for VMware
+#if [ -f /swapfile ];then
+#   # it has swap
+#   echo has swap
+#   cat /proc/swaps
+#else
+#   echo we would like to add a swapfile
+#   echo you will be asked to type the curated password
+#   echo
+#   sudo fallocate -l 2G /swapfile
+#   sudo chmod 600 /swapfile
+#   sudo mkswap /swapfile
+#   sudo swapon /swapfile
+#fi
 
 cd $HOME
 if [ -d curated-demo ];then
